@@ -1,0 +1,24 @@
+img {
+  width: 100%;
+}
+p,
+li,
+a {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: 300;
+}
+.title {
+    font-size: 3em;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.sub_title {
+    font-size: 2em;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: normal;
+    font-style: italic;
+}

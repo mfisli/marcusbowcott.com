@@ -1,21 +1,26 @@
 <html>
 <head>
   <meta charset="utf-8">
-    <title>{{title}}</title>
-    <meta name="description" content="Artwork of Marcus Bowcott">
-    <meta name="author" content="Marcus Bowcott">
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
+  <title>{{title}}</title>
+  <meta name="description" content="Artwork of Marcus Bowcott">
+  <meta name="author" content="Marcus Bowcott">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+  <script src="https://unpkg.com/zone.js@0.7.4?main=browser"></script>
+  <script src="https://unpkg.com/reflect-metadata@0.1.8"></script>
+  <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
 
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('app.component.ts').catch(function(err) {
+      console.error(err);
+    });
+  </script>
+
+</head>
 <body>
   <nav class="navbar navbar-inverse">
          <div class="container-fluid">
@@ -36,6 +41,20 @@
              </div>
          </div>
      </nav>
+     <div class="container">
+     <div class=title> Marcus Bowcott </div>
+     <div class="sub_title"> Painter and Sculptor </div>
+     <hr />
+   </div>
+
+  <div class="container text-center">
+    <div *ngFor="let item of data">
+      <img class="img-thumbnail" src="{{baseUrl}}{{item.Photo}}" >
+      <h4 class="">{{item.Name}}</h4>
+      <p class="">{{item.Height}} x {{item.Height}} {{item.Medium}}</p>
+      <hr />
+    </div>
+  </div>
 </body>
 
 </html>
